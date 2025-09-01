@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .slide {
+      display: none;
+      padding: 30px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .navigation {
+      margin: 20px 0;
+    }
+
+    .navigation button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 170px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ckarl Bienn Pengson</h1>
+    <p>Welcome to my personal website!</p>
+  </header>
+
+  <div class="slider">
+
+    <!-- Slide 1: About -->
+    <div class="slide active">
+      <!-- Profile Picture only -->
+      <img src="5c1ddf95-024e-4361-aceb-b9d7b4ca048a.jpg" alt="Profile Picture" class="profile-pic">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm glad you're here. This is a simple personal website where I can share who I am,
+        what I do, and connect with awesome people like you.
+      </p>
+      <p>
+        I enjoy exploring new ideas, learning skills that help me grow, and spending time with
+        the people who matter most. In my free time, I like to watch movies, listen to music,
+        and play online games. Technology and creativity are things I’m really passionate about,
+        and I always try to find ways to improve myself.
+      </p>
+      <p>
+        My goal is to build meaningful experiences, whether it’s through my studies, hobbies,
+        or personal projects. I believe that hard work, patience, and positivity can open doors
+        to great opportunities. This website is my little space to share a bit about myself
+        and stay connected with friends, family, and anyone who visits. Thanks for stopping by!
+      </p>
+    </div>
+
+    <!-- Slide 2: Contact + Family Gallery -->
+    <div class="slide">
+      <h2>Contact Me</h2>
+      <p>You can reach out to me through these platforms:</p>
+      <div class="social-links">
+        <a href="malito:ckarlbienn@gmail.com">📧 Email</a>
+        <a href="https://github.com/Ckarl067" target="_blank">💻 GitHub</a>
+        <a href="https://www.facebook.com/share/19xvkrp15Z/" target="_blank">📘 Facebook</a>
+      </div>
+
+      <h3 style="margin-top: 40px;">📷 My gallery</h3>
+      <div class="gallery">
+        <!-- Removed your profile photo from gallery -->
+        <img src="698a2416-9b2f-4044-b2cf-86487f6c0caf.jpg" alt=" Photo 1">
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Ckarl Bienn Pengson. All rights reserved.
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  </script>
+
+</body>
+</html>
